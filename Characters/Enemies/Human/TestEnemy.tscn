@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dr1xrqmuiu81c" path="res://Assets/Character/mPlayer_ [elf].png" id="1_dq4fg"]
 [ext_resource type="Script" uid="uid://dh3ey0ju3hb33" path="res://Characters/Enemies/Human/test_enemy.gd" id="1_owphe"]
 [ext_resource type="Script" uid="uid://c7ua13q5j8xr" path="res://Characters/Components/health_component.gd" id="2_0y5hg"]
+[ext_resource type="Resource" uid="uid://b7dfeght655kw" path="res://Resources/hitHurt.tres" id="2_rtxsu"]
+[ext_resource type="Resource" uid="uid://bkd0rcn1kdlig" path="res://Resources/hitDead.tres" id="3_uik5u"]
 [ext_resource type="Script" uid="uid://yfslq66ec0ws" path="res://Characters/Components/hurtbox_component.gd" id="4_ve3cf"]
 [ext_resource type="Script" uid="uid://dyfs50me2r3t1" path="res://Utils/state_manager.gd" id="5_exvu2"]
 [ext_resource type="Script" uid="uid://cp21mg8w7u7uq" path="res://Characters/Enemies/Human/States/state_idle.gd" id="6_exvu2"]
@@ -304,12 +306,14 @@ script = ExtResource("9_1vp4y")
 [node name="StateHurt" type="Node" parent="StateManager" unique_id=34668212 node_paths=PackedStringArray("state_idle")]
 script = ExtResource("10_hnfdi")
 state_idle = NodePath("../StateIdle")
+hit_sound = ExtResource("2_rtxsu")
 
 [node name="StateDie" type="Node" parent="StateManager" unique_id=409922351 node_paths=PackedStringArray("hurtbox_component", "hitbox_component", "invincibility_frames_component")]
 script = ExtResource("11_1vp4y")
 hurtbox_component = NodePath("../../HurtboxComponent")
 hitbox_component = NodePath("../../HitboxComponent")
 invincibility_frames_component = NodePath("../../InvincibilityFramesComponent")
+death_sound = ExtResource("3_uik5u")
 
 [node name="HurtboxComponent" type="Area2D" parent="." unique_id=1977443924]
 collision_layer = 4

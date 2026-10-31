@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://codnt12nsqqe7"]
+
+[ext_resource type="Script" uid="uid://ddwrj545pwh7r" path="res://Utils/sound_effect.gd" id="1_ngbdt"]
+[ext_resource type="AudioStream" uid="uid://d1w8ee2anhl1n" path="res://Assets/Sounds/sword.wav" id="2_pk6ra"]
+
+[resource]
+script = ExtResource("1_ngbdt")
+streams = Array[AudioStream]([ExtResource("2_pk6ra")])
+metadata/_custom_type_script = "uid://ddwrj545pwh7r"

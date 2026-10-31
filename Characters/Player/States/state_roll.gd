@@ -2,10 +2,12 @@ extends State
 
 @export var state_idle: State
 @export var hurtbox_component: HurtboxComponent
+@export var roll_sound: SoundEffect
 @onready var sprite: AnimatedSprite2D = %Sprite
 
 func enter() -> void:
 	sprite.play("roll")
+	AudioManager.play_sfx_at(roll_sound, parent.global_position)
 	parent.set_collision_mask_value(3, false)
 	hurtbox_component.set_deferred("monitoring", false)
 	sprite.animation_finished.connect(_roll_finished)

@@ -7,11 +7,13 @@
 [ext_resource type="Script" uid="uid://cth0fbraw0nrd" path="res://Characters/Player/States/state_walk.gd" id="5_l48on"]
 [ext_resource type="Script" uid="uid://byyf4byewxnbm" path="res://Characters/Player/States/state_attack.gd" id="6_4m0gv"]
 [ext_resource type="Script" uid="uid://dhtykcg44omtf" path="res://Characters/Player/States/state_roll.gd" id="7_1cduu"]
+[ext_resource type="Resource" uid="uid://mxh7yd0ythuh" path="res://Resources/roll.tres" id="7_7jpmk"]
 [ext_resource type="Script" uid="uid://yfslq66ec0ws" path="res://Characters/Components/hurtbox_component.gd" id="8_14m2a"]
 [ext_resource type="Script" uid="uid://dvhudque3n8d" path="res://Characters/Player/States/state_hurt.gd" id="8_wraqo"]
 [ext_resource type="Script" uid="uid://dgwhv3b0gbvtb" path="res://Characters/Player/States/state_die.gd" id="9_0ij6m"]
 [ext_resource type="Script" uid="uid://d25h1emkeg3n6" path="res://Characters/Player/hand_pivot.gd" id="9_1niqm"]
 [ext_resource type="Script" uid="uid://c7ua13q5j8xr" path="res://Characters/Components/health_component.gd" id="9_2qcyb"]
+[ext_resource type="Resource" uid="uid://codnt12nsqqe7" path="res://Resources/sword.tres" id="9_5xivi"]
 [ext_resource type="PackedScene" uid="uid://dd44kgwkdw8bd" path="res://Characters/Player/Weapon.tscn" id="11_6fff4"]
 [ext_resource type="Script" uid="uid://lpsunokgkmae" path="res://Characters/Components/invincibility_frames_component.gd" id="14_0ij6m"]
 [ext_resource type="Script" uid="uid://dhj6t2yv7m5dj" path="res://Characters/Player/knockback_component.gd" id="15_2xv0b"]
@@ -327,11 +329,13 @@ state_attack = NodePath("../StateAttack")
 script = ExtResource("7_1cduu")
 state_idle = NodePath("../StateIdle")
 hurtbox_component = NodePath("../../HurtboxComponent")
+roll_sound = ExtResource("7_7jpmk")
 
 [node name="StateAttack" type="Node" parent="StateManager" unique_id=1203135172 node_paths=PackedStringArray("state_idle", "weapon")]
 script = ExtResource("6_4m0gv")
 state_idle = NodePath("../StateIdle")
 weapon = NodePath("../../HandPivot/Weapon")
+sword_sound = ExtResource("9_5xivi")
 
 [node name="StateHurt" type="Node" parent="StateManager" unique_id=1085088264 node_paths=PackedStringArray("state_idle")]
 script = ExtResource("8_wraqo")
@@ -359,9 +363,10 @@ metadata/_custom_type_script = "uid://yfslq66ec0ws"
 position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_6woav")
 
-[node name="HandPivot" type="Marker2D" parent="." unique_id=213197843]
+[node name="HandPivot" type="Marker2D" parent="." unique_id=213197843 node_paths=PackedStringArray("weapon")]
 position = Vector2(0, 5)
 script = ExtResource("9_1niqm")
+weapon = NodePath("Weapon")
 
 [node name="Weapon" parent="HandPivot" unique_id=1053999332 instance=ExtResource("11_6fff4")]
 position = Vector2(0, -8)
@@ -378,3 +383,6 @@ script = ExtResource("15_2xv0b")
 parent = NodePath("..")
 hurtbox_component = NodePath("../HurtboxComponent")
 metadata/_custom_type_script = "uid://dhj6t2yv7m5dj"
+
+[connection signal="attack_finished" from="HandPivot/Weapon" to="HandPivot" method="_on_weapon_attack_finished"]
+[connection signal="attacking" from="HandPivot/Weapon" to="HandPivot" method="_on_weapon_attacking"]
