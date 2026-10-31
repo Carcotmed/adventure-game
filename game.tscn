@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://trqgmmyo8yv0"]
+
+[ext_resource type="PackedScene" uid="uid://bwovbbhbu5n5x" path="res://Characters/Player/Player.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://cyoyv6rq8gnh" path="res://Maps/map.tscn" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bfccy45t23u12" path="res://Characters/Enemies/Human/TestEnemy.tscn" id="3_feb5d"]
+
+[node name="Game" type="Node2D" unique_id=2135436123]
+
+[node name="Map" parent="." unique_id=766467617 instance=ExtResource("1_e2o6t")]
+
+[node name="Characters" type="Node2D" parent="Map" unique_id=352939104]
+y_sort_enabled = true
+
+[node name="TestEnemy2" parent="Map/Characters" unique_id=1517977786 instance=ExtResource("3_feb5d")]
+position = Vector2(66, 47)
+motion_mode = 1
+
+[node name="Player" parent="Map/Characters" unique_id=229729419 instance=ExtResource("1_80nbo")]
+position = Vector2(-105, 57)
+
+[node name="Camera" type="Camera2D" parent="Map/Characters/Player" unique_id=518985039]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+
+[node name="TestEnemy" parent="Map/Characters" unique_id=2141857076 instance=ExtResource("3_feb5d")]
+position = Vector2(1, 32)
+motion_mode = 1
+
+[node name="EnemyArea" type="Area2D" parent="Map" unique_id=1526906663]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/EnemyArea" unique_id=318841677]
+position = Vector2(-4, 26)
+polygon = PackedVector2Array(20, -59, 117, 7, 117, 55, -44, 44, -46, -29)

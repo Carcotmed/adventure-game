@@ -1,0 +1,7 @@
+extends Node
+
+const PLAYER_WALK_SPEED := 80
+const PLAYER_ROLL_SPEED := 170
+
+const ENEMY_MIN_IDLE_TIME := 2
+const ENEMY_MAX_IDLE_TIME := 4

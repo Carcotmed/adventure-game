@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://eng8t2rdava6"]
+
+[ext_resource type="Script" uid="uid://lpsunokgkmae" path="res://Characters/Components/invincibility_frames_component.gd" id="1_b0llf"]
+
+[node name="InvencibilityFramesComponent" type="Timer" unique_id=1480376676]
+wait_time = 3.0
+one_shot = true
+script = ExtResource("1_b0llf")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://qq2br2ropfrn"]
+
+[ext_resource type="Script" uid="uid://ce02a5bt2f0xo" path="res://Characters/Components/vision_component.gd" id="1_0xr4k"]
+
+[node name="VisionComponent" type="Area2D" unique_id=1706679966]
+script = ExtResource("1_0xr4k")
