@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfccy45t23u12"]
 
-[ext_resource type="Texture2D" uid="uid://dr1xrqmuiu81c" path="res://Assets/Character/mPlayer_ [elf].png" id="1_dq4fg"]
+[ext_resource type="Texture2D" uid="uid://dr1xrqmuiu81c" path="res://Assets/Character/Elf/mPlayer_ [elf].png" id="1_dq4fg"]
 [ext_resource type="Script" uid="uid://dh3ey0ju3hb33" path="res://Characters/Enemies/Human/test_enemy.gd" id="1_owphe"]
 [ext_resource type="Script" uid="uid://c7ua13q5j8xr" path="res://Characters/Components/health_component.gd" id="2_0y5hg"]
 [ext_resource type="Resource" uid="uid://b7dfeght655kw" path="res://Resources/hitHurt.tres" id="2_rtxsu"]

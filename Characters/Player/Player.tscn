@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b7gc48epndq7h" path="res://Characters/Player/player.gd" id="1_l48on"]
 [ext_resource type="Script" uid="uid://dyfs50me2r3t1" path="res://Utils/state_manager.gd" id="3_65n15"]
 [ext_resource type="Script" uid="uid://cmyfxav7fmm5l" path="res://Characters/Player/States/state_idle.gd" id="4_l48on"]
-[ext_resource type="Texture2D" uid="uid://d15hgpp75ys03" path="res://Assets/Character/mPlayer_ [human].png" id="5_4m0gv"]
+[ext_resource type="Texture2D" uid="uid://d15hgpp75ys03" path="res://Assets/Character/Human/mPlayer_ [human].png" id="5_4m0gv"]
 [ext_resource type="Script" uid="uid://cth0fbraw0nrd" path="res://Characters/Player/States/state_walk.gd" id="5_l48on"]
 [ext_resource type="Script" uid="uid://byyf4byewxnbm" path="res://Characters/Player/States/state_attack.gd" id="6_4m0gv"]
 [ext_resource type="Script" uid="uid://dhtykcg44omtf" path="res://Characters/Player/States/state_roll.gd" id="7_1cduu"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://yfslq66ec0ws" path="res://Characters/Components/hurtbox_component.gd" id="8_14m2a"]
 [ext_resource type="Script" uid="uid://dvhudque3n8d" path="res://Characters/Player/States/state_hurt.gd" id="8_wraqo"]
 [ext_resource type="Script" uid="uid://dgwhv3b0gbvtb" path="res://Characters/Player/States/state_die.gd" id="9_0ij6m"]
-[ext_resource type="Script" uid="uid://d25h1emkeg3n6" path="res://Characters/Player/hand_pivot.gd" id="9_1niqm"]
 [ext_resource type="Script" uid="uid://c7ua13q5j8xr" path="res://Characters/Components/health_component.gd" id="9_2qcyb"]
 [ext_resource type="Resource" uid="uid://codnt12nsqqe7" path="res://Resources/sword.tres" id="9_5xivi"]
 [ext_resource type="PackedScene" uid="uid://dd44kgwkdw8bd" path="res://Characters/Player/Weapon.tscn" id="11_6fff4"]
@@ -275,9 +274,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_afbvv"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5xivi"]
 radius = 5.0
-height = 14.0
+height = 16.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6woav"]
 radius = 6.0
@@ -298,14 +297,12 @@ state_hurt = NodePath("StateManager/StateHurt")
 unique_name_in_owner = true
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_dl42p")
-animation = &"die"
-frame = 3
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=291742476]
 unique_name_in_owner = true
 position = Vector2(0, 5)
-shape = SubResource("CapsuleShape2D_afbvv")
+shape = SubResource("CapsuleShape2D_5xivi")
 debug_color = Color(0.25190076, 0.635528, 0, 0.41960785)
 
 [node name="StateManager" type="Node" parent="." unique_id=1736853485 node_paths=PackedStringArray("initial_state", "parent")]
@@ -363,13 +360,11 @@ metadata/_custom_type_script = "uid://yfslq66ec0ws"
 position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_6woav")
 
-[node name="HandPivot" type="Marker2D" parent="." unique_id=213197843 node_paths=PackedStringArray("weapon")]
+[node name="HandPivot" type="Marker2D" parent="." unique_id=213197843]
 position = Vector2(0, 5)
-script = ExtResource("9_1niqm")
-weapon = NodePath("Weapon")
 
-[node name="Weapon" parent="HandPivot" unique_id=1053999332 instance=ExtResource("11_6fff4")]
-position = Vector2(0, -8)
+[node name="Weapon" parent="HandPivot" unique_id=1053999332 node_paths=PackedStringArray("parent_sprite") instance=ExtResource("11_6fff4")]
+parent_sprite = NodePath("../../Sprite")
 
 [node name="InvincibilityFramesComponent" type="Timer" parent="." unique_id=994316843 node_paths=PackedStringArray("sprite", "hurtbox_component")]
 one_shot = true
@@ -383,6 +378,3 @@ script = ExtResource("15_2xv0b")
 parent = NodePath("..")
 hurtbox_component = NodePath("../HurtboxComponent")
 metadata/_custom_type_script = "uid://dhj6t2yv7m5dj"
-
-[connection signal="attack_finished" from="HandPivot/Weapon" to="HandPivot" method="_on_weapon_attack_finished"]
-[connection signal="attacking" from="HandPivot/Weapon" to="HandPivot" method="_on_weapon_attacking"]
