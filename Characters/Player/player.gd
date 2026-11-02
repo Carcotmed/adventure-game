@@ -3,6 +3,7 @@ class_name Player
 
 @export var health_component: HealthComponent
 @export var hurtbox_component: HurtboxComponent
+@export var inventory_component: InventoryComponent
 
 @export var state_manager: StateManager
 @export var state_died: State

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://kqxrq4njn8mg" path="res://Assets/Weapons/sword_ [iron].png" id="1_c8ccq"]
 [ext_resource type="Script" uid="uid://dscrh8c4nojmx" path="res://Characters/Player/weapon.gd" id="1_q5b36"]
-[ext_resource type="Script" uid="uid://cxiaw8rfp0jwp" path="res://Characters/Components/hitbox_component.gd" id="3_q5b36"]
+[ext_resource type="Script" uid="uid://cxiaw8rfp0jwp" path="res://Characters/Components/Hitbox/hitbox_component.gd" id="3_q5b36"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q5b36"]
 radius = 3.0

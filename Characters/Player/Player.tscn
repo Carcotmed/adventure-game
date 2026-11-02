@@ -7,15 +7,16 @@
 [ext_resource type="Script" uid="uid://cth0fbraw0nrd" path="res://Characters/Player/States/state_walk.gd" id="5_l48on"]
 [ext_resource type="Script" uid="uid://byyf4byewxnbm" path="res://Characters/Player/States/state_attack.gd" id="6_4m0gv"]
 [ext_resource type="Script" uid="uid://dhtykcg44omtf" path="res://Characters/Player/States/state_roll.gd" id="7_1cduu"]
-[ext_resource type="Resource" uid="uid://mxh7yd0ythuh" path="res://Resources/roll.tres" id="7_7jpmk"]
-[ext_resource type="Script" uid="uid://yfslq66ec0ws" path="res://Characters/Components/hurtbox_component.gd" id="8_14m2a"]
+[ext_resource type="Resource" uid="uid://mxh7yd0ythuh" path="res://Resources/SoundEffects/roll.tres" id="7_7jpmk"]
+[ext_resource type="Script" uid="uid://yfslq66ec0ws" path="res://Characters/Components/Hurtbox/hurtbox_component.gd" id="8_14m2a"]
 [ext_resource type="Script" uid="uid://dvhudque3n8d" path="res://Characters/Player/States/state_hurt.gd" id="8_wraqo"]
 [ext_resource type="Script" uid="uid://dgwhv3b0gbvtb" path="res://Characters/Player/States/state_die.gd" id="9_0ij6m"]
-[ext_resource type="Script" uid="uid://c7ua13q5j8xr" path="res://Characters/Components/health_component.gd" id="9_2qcyb"]
-[ext_resource type="Resource" uid="uid://codnt12nsqqe7" path="res://Resources/sword.tres" id="9_5xivi"]
+[ext_resource type="Script" uid="uid://c7ua13q5j8xr" path="res://Characters/Components/Health/health_component.gd" id="9_2qcyb"]
+[ext_resource type="Resource" uid="uid://codnt12nsqqe7" path="res://Resources/SoundEffects/sword.tres" id="9_5xivi"]
 [ext_resource type="PackedScene" uid="uid://dd44kgwkdw8bd" path="res://Characters/Player/Weapon.tscn" id="11_6fff4"]
-[ext_resource type="Script" uid="uid://lpsunokgkmae" path="res://Characters/Components/invincibility_frames_component.gd" id="14_0ij6m"]
-[ext_resource type="Script" uid="uid://dhj6t2yv7m5dj" path="res://Characters/Player/knockback_component.gd" id="15_2xv0b"]
+[ext_resource type="Script" uid="uid://lpsunokgkmae" path="res://Characters/Components/Invincibility/invincibility_frames_component.gd" id="14_0ij6m"]
+[ext_resource type="Script" uid="uid://dhj6t2yv7m5dj" path="res://Characters/Components/Knockback/knockback_component.gd" id="15_2xv0b"]
+[ext_resource type="Script" uid="uid://c2jwq333u16x7" path="res://Characters/Components/Inventory/inventory_component.gd" id="17_5xivi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqos4"]
 atlas = ExtResource("5_4m0gv")
@@ -282,13 +283,14 @@ height = 16.0
 radius = 6.0
 height = 16.0
 
-[node name="Player" type="CharacterBody2D" unique_id=229729419 node_paths=PackedStringArray("health_component", "hurtbox_component", "state_manager", "state_died", "state_hurt")]
+[node name="Player" type="CharacterBody2D" unique_id=229729419 node_paths=PackedStringArray("health_component", "hurtbox_component", "inventory_component", "state_manager", "state_died", "state_hurt")]
 collision_layer = 2
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_l48on")
 health_component = NodePath("HealthComponent")
 hurtbox_component = NodePath("HurtboxComponent")
+inventory_component = NodePath("InventoryComponent")
 state_manager = NodePath("StateManager")
 state_died = NodePath("StateManager/StateDie")
 state_hurt = NodePath("StateManager/StateHurt")
@@ -378,3 +380,7 @@ script = ExtResource("15_2xv0b")
 parent = NodePath("..")
 hurtbox_component = NodePath("../HurtboxComponent")
 metadata/_custom_type_script = "uid://dhj6t2yv7m5dj"
+
+[node name="InventoryComponent" type="Node" parent="." unique_id=885724644]
+script = ExtResource("17_5xivi")
+metadata/_custom_type_script = "uid://c2jwq333u16x7"

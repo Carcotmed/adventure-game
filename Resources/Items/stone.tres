@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cq3mofct4anxf"]
+
+[ext_resource type="Script" uid="uid://basnqe8ne1otn" path="res://Resources/item_data.gd" id="1_h106x"]
+[ext_resource type="Resource" uid="uid://cpa4af6akqcml" path="res://Resources/SoundEffects/pickup.tres" id="1_lwbyh"]
+[ext_resource type="Texture2D" uid="uid://beom4mxwr31mn" path="res://Assets/Items/items.png" id="2_ws5bn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws5bn"]
+atlas = ExtResource("2_ws5bn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2vafv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws5bn")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_h106x")
+sprite_frames = SubResource("SpriteFrames_2vafv")
+name = "Stone"
+description = "A big stone"
+pickup_sound = ExtResource("1_lwbyh")
+metadata/_custom_type_script = "uid://basnqe8ne1otn"

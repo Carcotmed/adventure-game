@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dljo2wik46txp"]
 
-[ext_resource type="Script" uid="uid://0fn5bkb1744t" path="res://Characters/Components/loot_table_component.gd" id="1_3cask"]
+[ext_resource type="Script" uid="uid://0fn5bkb1744t" path="res://Characters/Components/LootTable/loot_table_component.gd" id="1_3cask"]
 
 [node name="LootTableComponent" type="Node" unique_id=662566642]
 script = ExtResource("1_3cask")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://b7dfeght655kw"]
 
-[ext_resource type="Script" uid="uid://ddwrj545pwh7r" path="res://Utils/sound_effect.gd" id="1_dio43"]
+[ext_resource type="Script" uid="uid://ddwrj545pwh7r" path="res://Resources/sound_effect.gd" id="1_dio43"]
 [ext_resource type="AudioStream" uid="uid://dmgri45p4rtxd" path="res://Assets/Sounds/hitHurt.wav" id="2_1rjke"]
 
 [resource]
