@@ -340,9 +340,9 @@ sword_sound = ExtResource("9_5xivi")
 script = ExtResource("8_wraqo")
 state_idle = NodePath("../StateIdle")
 
-[node name="StateDie" type="Node" parent="StateManager" unique_id=1993835455 node_paths=PackedStringArray("hand_pivot", "hurtbox_component", "invincibility_frames_component")]
+[node name="StateDie" type="Node" parent="StateManager" unique_id=1993835455 node_paths=PackedStringArray("weapon", "hurtbox_component", "invincibility_frames_component")]
 script = ExtResource("9_0ij6m")
-hand_pivot = NodePath("../../HandPivot")
+weapon = NodePath("../../HandPivot/Weapon")
 hurtbox_component = NodePath("../../HurtboxComponent")
 invincibility_frames_component = NodePath("../../InvincibilityFramesComponent")
 
@@ -384,3 +384,6 @@ metadata/_custom_type_script = "uid://dhj6t2yv7m5dj"
 [node name="InventoryComponent" type="Node" parent="." unique_id=885724644]
 script = ExtResource("17_5xivi")
 metadata/_custom_type_script = "uid://c2jwq333u16x7"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=938168169]
+zoom = Vector2(2, 2)

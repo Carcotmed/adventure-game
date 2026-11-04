@@ -1,15 +1,15 @@
 extends State
 
 @onready var sprite: AnimatedSprite2D = %Sprite
-@export var hand_pivot: HandPivot
+@export var weapon: Weapon
 @export var hurtbox_component: HurtboxComponent
 @export var invincibility_frames_component: InvincibilityFramesComponent
 
 func enter() -> void:
 	sprite.animation_finished.connect(_on_sprite_animation_finished)
 	sprite.play("die")
-	hand_pivot.set_process(false)
-	hand_pivot.set_deferred("visible", false)
+	weapon.set_process(false)
+	weapon.set_deferred("visible", false)
 	hurtbox_component.set_deferred("monitoring", false)
 	invincibility_frames_component.stop()
 
