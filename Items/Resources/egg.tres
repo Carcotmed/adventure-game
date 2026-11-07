@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://hgr2uw36funx"]
+
+[ext_resource type="Resource" uid="uid://cpa4af6akqcml" path="res://Audio/SoundEffects/pickup.tres" id="1_2vafv"]
+[ext_resource type="Script" uid="uid://basnqe8ne1otn" path="res://Items/Resources/item_data.gd" id="1_kocfw"]
+[ext_resource type="Texture2D" uid="uid://beom4mxwr31mn" path="res://Items/items.png" id="2_sd2h7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd2h7"]
+atlas = ExtResource("2_sd2h7")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uu74s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd2h7")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_kocfw")
+sprite_frames = SubResource("SpriteFrames_uu74s")
+name = "Egg"
+description = "Legendary Egg"
+max_stack = 1
+rarity = 4
+pickup_sound = ExtResource("1_2vafv")
+metadata/_custom_type_script = "uid://basnqe8ne1otn"

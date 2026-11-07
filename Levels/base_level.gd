@@ -1,12 +1,7 @@
-@abstract
 class_name BaseLevel
 extends Node
 
-@abstract
-func get_default_player_spawn() -> Vector2
+signal finished(result: Dictionary)
 
-@abstract
-func get_entity_root() -> Node2D
-
-#@abstract
-#func get_player_camera() -> Camera2D
+func setup(_params: Dictionary) -> void:
+	pass

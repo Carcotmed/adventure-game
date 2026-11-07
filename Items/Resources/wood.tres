@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cdjj4sqvj6jb2"]
+
+[ext_resource type="Script" uid="uid://basnqe8ne1otn" path="res://Items/Resources/item_data.gd" id="1_6vvvm"]
+[ext_resource type="Resource" uid="uid://cpa4af6akqcml" path="res://Audio/SoundEffects/pickup.tres" id="1_p7cti"]
+[ext_resource type="Texture2D" uid="uid://beom4mxwr31mn" path="res://Items/items.png" id="2_6vvvm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vvvm"]
+atlas = ExtResource("2_6vvvm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sd2h7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vvvm")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_6vvvm")
+sprite_frames = SubResource("SpriteFrames_sd2h7")
+name = "Wood"
+description = "A chunk of wood"
+pickup_sound = ExtResource("1_p7cti")
+metadata/_custom_type_script = "uid://basnqe8ne1otn"

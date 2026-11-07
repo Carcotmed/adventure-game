@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dgyypv24rsibo"]
+
+[ext_resource type="Script" uid="uid://57cg3lpoakts" path="res://Core/transition_layer.gd" id="1_3sbno"]
+
+[node name="TransitionLayer" type="CanvasLayer" unique_id=310055697]
+process_mode = 3
+layer = 100
+script = ExtResource("1_3sbno")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2144406766]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://bkd0rcn1kdlig"]
-
-[ext_resource type="Script" uid="uid://ddwrj545pwh7r" path="res://Resources/sound_effect.gd" id="1_ciiiv"]
-[ext_resource type="AudioStream" uid="uid://d0c0tfd2lnagj" path="res://Assets/Sounds/hitDead.wav" id="2_fk32c"]
-
-[resource]
-script = ExtResource("1_ciiiv")
-streams = Array[AudioStream]([ExtResource("2_fk32c")])
-metadata/_custom_type_script = "uid://ddwrj545pwh7r"

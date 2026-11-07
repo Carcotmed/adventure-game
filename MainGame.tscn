@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://trqgmmyo8yv0"]
+
+[ext_resource type="Script" uid="uid://c4nwsgmm0keti" path="res://main_game.gd" id="1_e3m3f"]
+[ext_resource type="PackedScene" uid="uid://dgyypv24rsibo" path="res://Core/transition_layer.tscn" id="2_ws5ob"]
+
+[node name="MainGame" type="Node" unique_id=376425869]
+process_mode = 3
+script = ExtResource("1_e3m3f")
+
+[node name="World" type="Node2D" parent="." unique_id=183152476]
+unique_name_in_owner = true
+process_mode = 1
+
+[node name="TransitionLayer" parent="." unique_id=310055697 instance=ExtResource("2_ws5ob")]
+unique_name_in_owner = true
+visible = false
