@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://c7ua13q5j8xr" path="res://Components/Health/health_component.gd" id="12_h03de"]
 [ext_resource type="Script" uid="uid://yfslq66ec0ws" path="res://Components/Hurtbox/hurtbox_component.gd" id="13_ewrch"]
 [ext_resource type="Script" uid="uid://lpsunokgkmae" path="res://Components/Invincibility/invincibility_frames_component.gd" id="14_e8qxc"]
-[ext_resource type="Script" uid="uid://dscrh8c4nojmx" path="res://Entities/Player/weapon.gd" id="14_hl213"]
+[ext_resource type="PackedScene" uid="uid://dd44kgwkdw8bd" path="res://Entities/Player/Weapon.tscn" id="14_hl213"]
 [ext_resource type="Script" uid="uid://dhj6t2yv7m5dj" path="res://Components/Knockback/knockback_component.gd" id="15_rvtm2"]
 [ext_resource type="Script" uid="uid://c2jwq333u16x7" path="res://Components/Inventory/inventory_component.gd" id="16_o8vwu"]
 
@@ -365,10 +365,8 @@ shape = SubResource("CapsuleShape2D_6woav")
 [node name="HandPivot" type="Marker2D" parent="." unique_id=213197843]
 position = Vector2(0, 5)
 
-[node name="Weapon" type="Node2D" parent="HandPivot" unique_id=1888336662 node_paths=PackedStringArray("parent_sprite")]
-script = ExtResource("14_hl213")
+[node name="Weapon" parent="HandPivot" unique_id=1053999332 node_paths=PackedStringArray("parent_sprite") instance=ExtResource("14_hl213")]
 parent_sprite = NodePath("../../Sprite")
-metadata/_custom_type_script = "uid://dscrh8c4nojmx"
 
 [node name="InvincibilityFramesComponent" type="Timer" parent="." unique_id=994316843 node_paths=PackedStringArray("sprite", "hurtbox_component")]
 one_shot = true
@@ -386,6 +384,3 @@ metadata/_custom_type_script = "uid://dhj6t2yv7m5dj"
 [node name="InventoryComponent" type="Node" parent="." unique_id=885724644]
 script = ExtResource("16_o8vwu")
 metadata/_custom_type_script = "uid://c2jwq333u16x7"
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=938168169]
-zoom = Vector2(2, 2)

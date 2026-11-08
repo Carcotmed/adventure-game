@@ -8,7 +8,7 @@ signal pause_changed(is_paused: bool)
 # Único sitio con las rutas de los niveles. Cambia estas por tus rutas o UIDs.
 const LEVELS: Dictionary = {
 	GameState.MAIN_MENU: "uid://dmltc0cnfnpk3",
-	#GameState.HUB: "res://world/hub/hub.tscn",
+	GameState.HUB: "uid://cna1pgyqesccx",
 	#GameState.EXPEDITION: "res://world/expedition/expedition.tscn",
 	#GameState.RESULTS: "res://ui/levels/results.tscn",
 }

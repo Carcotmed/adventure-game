@@ -1,2 +1,2 @@
-class_name PlayerSpawnMarker
+class_name SpawnMarker
 extends Marker2D

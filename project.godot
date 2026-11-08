@@ -27,6 +27,7 @@ AudioManager="*uid://drx380omvrqdk"
 SettingsManager="*uid://2c8ttq2ltd4u"
 MenuManager="*uid://dc3iehrobkp0l"
 LevelManager="*uid://cyq1gpep32yda"
+CameraManager="*uid://co2xx6ix7owuk"
 
 [display]
 
